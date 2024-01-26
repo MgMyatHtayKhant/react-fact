@@ -1,0 +1,134 @@
+%flex-common {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.25rem, 1.5vw, 0.75rem);
+}
+
+.container {
+  width: clamp(300px, 100%, 678px);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin-inline: auto;
+
+  .head {
+    @extend %flex-common;
+    padding: 1.5rem 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    z-index: 10;
+
+    .react-icon {
+      width: clamp(30px, 4vw, 40px);
+    }
+
+    .icon-text {
+      flex: 1;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      letter-spacing: -2px;
+      color: var(--REACT-COLOR);
+    }
+
+    .color-container {
+      @extend %flex-common;
+
+      .color-text {
+        font-size: clamp(0.75rem, 2vw, 1rem);
+        font-weight: 500;
+        user-select: none;
+      }
+
+      .dark-text {
+        opacity: 0.5;
+      }
+   
+      .btn-con {
+        width: clamp(3.25rem, 5vw, 3.75rem);
+        aspect-ratio: 7.5 / 3.5;
+        border-radius: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        background-color: black;
+        transition: justify-content 2s;
+        padding-inline: 0.25rem;
+        cursor: pointer;
+
+        .btn-cycle {
+          background-color: white;
+          width: clamp(1rem, 2vw, 1.5rem);
+          aspect-ratio: 1;
+          border-radius: 1.5rem;
+        }
+      }
+    }
+  }
+
+  .content {
+    flex: 1 1 auto;
+    padding-inline: 20px;
+    background-image: url("./assets/images/react-icon-light.png");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-color: white;
+
+    .title {
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      padding-block: 3rem;
+    }
+
+    .react-fact-list {
+      position: relative;
+      z-index: 10;
+      li {
+        font-size: clamp(1rem, 2vw, 1.5rem);
+      }
+
+      li:nth-child(-n + 4) {
+        margin-bottom: 1.5rem;
+      }
+
+      li::marker {
+        color: var(--REACT-COLOR);
+      }
+    }
+  }
+
+}
+
+.container.dark {
+
+  .head {
+    background-color: #21222A;
+
+    .color-container {
+      .color-text {
+        color: white;
+      }
+
+      .light-text {
+        opacity: 0.5;
+      }
+
+      .dark-text {
+        opacity: 1;
+      }
+
+      .btn-con {
+        justify-content: flex-end;
+        background-color: white;
+
+        .btn-cycle {
+          background-color: black;
+        }
+      }
+    }
+  }
+
+  .content {
+    background-image: url("./assets/images/react-icon-dark.png");
+    background-color: #282D35;
+    color: white;
+  }
+}

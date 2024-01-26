@@ -1,0 +1,17 @@
+:root {
+  --BODY-BG: #E5E5E5;
+  --REACT-COLOR: #00D8FF;
+}
+
+* {
+  margin: 0;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--BODY-BG);
+}
